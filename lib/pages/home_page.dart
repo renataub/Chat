@@ -1,12 +1,12 @@
 import 'package:chat/components/user_tile.dart';
 import 'package:chat/models/message.dart';
 import 'package:chat/services/auth/auth_services.dart';
-import 'package:chat/services/auth/chat/chat_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../components/my_app_bar.dart';
 import '../components/my_drawer.dart';
+import '../services/chat/chat_service.dart';
 
 class HomePage extends StatelessWidget {
   HomePage();
