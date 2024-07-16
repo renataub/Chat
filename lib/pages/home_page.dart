@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import '../components/my_app_bar.dart';
 import '../components/my_drawer.dart';
 import '../services/chat/chat_service.dart';
+import 'chat_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage();
@@ -39,15 +40,15 @@ class HomePage extends StatelessWidget {
       return UserTile(
         users: user,
         onTap: () async {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ChatPage(
-          //       receiverEmail: user.email,
-          //       receiverID: user.uid
-          //     ),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChatPage(
+                receiverEmail: user.email,
+                receiverID: user.uid
+              ),
+            ),
+          );
           await _chatService.markMessageAsRead(
             _authService.getCurrentUser()!.uid, user.uid
           );
